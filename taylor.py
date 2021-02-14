@@ -1,6 +1,8 @@
-
-
-
+#Each line of input should be structured as follows:
+# x=c1 ^ n1 + c2 ^ n2 + ... + ck ^ nk
+#Where x is the value to approximate for, ci is 
+#the ith coefficient and ni is the ith exponent.
+#Save to a .txt file in the same directory as this .py
 
 
 def factorial(n):
