@@ -1,6 +1,6 @@
 
 
-A = 0
+
 
 
 def factorial(n):
@@ -48,18 +48,18 @@ def differentiate_polynomial(coefficients, exponents):
     return new_coefficients, exponents
 
 
-def taylor(f, x, n):
+def taylor(f, x, n, point):
     coefficients, exponents = deconstruct_polynomial(f)
     approximation = 0
 
     for number in range(0, n):
-        approximation += (evaluate_polynomial(coefficients, exponents, A) * ((x - A)**number)) / factorial(number)
+        approximation += (evaluate_polynomial(coefficients, exponents, point) * ((x - point)**number)) / factorial(number)
         coefficients, exponents = differentiate_polynomial(coefficients, exponents)
 
     return approximation
 
 
-def start(file_name, n):
+def start(file_name, n, point):
     lines = open(file_name).read().splitlines()
 
     for line in lines:
@@ -67,11 +67,12 @@ def start(file_name, n):
         x = int(line[0])
         function = separate_function(line[1])
 
-        print('The approximation achieved using a Maclaurin series of %d terms is %.1f.' % (n, taylor(function, x, n)))
+        print('The approximation achieved using a Taylor series of %d terms around the point x = %.2f is %.2f.' % (n, point, taylor(function, x, n, point)))
 
 
 #start
-file_name = input('Enter the file name to approximate with a Maclaurin series: ')
-n = int(input('How many terms in the Maclaurin series would you like: '))
+file_name = input('Enter the file name to approximate with a Taylor series: ')
+point = float(input('Enter the point around which to center the approximation: '))
+n = int(input('How many terms in the Taylor series would you like: '))
 
-start(file_name, n)
+start(file_name, n, point)
