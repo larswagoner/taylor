@@ -12,7 +12,7 @@ def factorial(n):
     return result
 
 
-#splits up the function in accordance to the manual's instructions
+#splits up the function
 def separate_function(function):
     function = function.split('+')
     terms = []
