@@ -1,0 +1,3 @@
+The approximation achieved using a Taylor series of 10 terms around the point x = 0 is 14.0.
+The approximation achieved using a Taylor series of 10 terms around the point x = 0 is 27.0.
+The approximation achieved using a Taylor series of 10 terms around the point x = 0 is 775.0.
